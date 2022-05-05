@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pop Up-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="PopUp" id="Y6W-OH-hqX" customClass="PopUp" customModule="BasicCustomView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juD-fd-4zs">
+                                <rect key="frame" x="20" y="423" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RTo-9l-pG1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="팝업을 볼까요?"/>
+                                <connections>
+                                    <action selector="showPopUpTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Muk-Co-Szl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1️⃣ 팝업" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClE-8f-Skm">
+                                <rect key="frame" x="170" y="64" width="74" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="juD-fd-4zs" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="H7b-7r-yvW"/>
+                            <constraint firstItem="ClE-8f-Skm" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="S7A-Pc-k5a"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="juD-fd-4zs" secondAttribute="trailing" constant="20" id="T5y-1F-DnQ"/>
+                            <constraint firstItem="ClE-8f-Skm" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="cnN-YT-Aco"/>
+                            <constraint firstItem="juD-fd-4zs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="gh6-3e-flf"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pop Up" image="moon" catalog="system" selectedImage="moon.fill" id="Oea-Qv-MLS"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="116"/>
+        </scene>
+        <!--Custom Pop Up-->
+        <scene sceneID="p9R-Eo-cOQ">
+            <objects>
+                <viewController storyboardIdentifier="CustomPopUp" id="SaF-38-urS" customClass="CustomPopUp" customModule="BasicCustomView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EhI-vh-Fhu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nUs-aZ-12Y">
+                                <rect key="frame" x="24" y="358" width="366" height="180"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gamecontroller" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cyZ-lW-LYc">
+                                        <rect key="frame" x="20" y="41" width="48" height="45.5"/>
+                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="AvV-pO-rLb"/>
+                                            <constraint firstAttribute="width" constant="48" id="uhO-KR-g7B"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ic2-AY-8jE">
+                                        <rect key="frame" x="80" y="44" width="181" height="40.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신비롭고 아름다운 아요의 세계" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ojy-PO-eeh">
+                                                <rect key="frame" x="0.0" y="0.0" width="181" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="커스텀 팝업에 대해서 알아봅시다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liJ-ly-cvb">
+                                                <rect key="frame" x="0.0" y="26" width="159.5" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" systemColor="systemGray2Color"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cf3-vB-V4B">
+                                        <rect key="frame" x="0.0" y="130" width="366" height="50"/>
+                                        <color key="backgroundColor" red="0.32549019610000002" green="0.28235294119999998" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="9J3-6t-xzA"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="시작하시겠습니까?">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startButtonTapped:" destination="SaF-38-urS" eventType="touchUpInside" id="Zdm-iP-vGv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Ic2-AY-8jE" firstAttribute="centerY" secondItem="cyZ-lW-LYc" secondAttribute="centerY" id="6zj-iZ-aJZ"/>
+                                    <constraint firstItem="Ic2-AY-8jE" firstAttribute="leading" secondItem="cyZ-lW-LYc" secondAttribute="trailing" constant="12" id="LPw-qH-fCs"/>
+                                    <constraint firstItem="Cf3-vB-V4B" firstAttribute="leading" secondItem="nUs-aZ-12Y" secondAttribute="leading" id="Ol6-jF-Dzb"/>
+                                    <constraint firstAttribute="height" constant="180" id="TfL-Gw-JXi"/>
+                                    <constraint firstItem="cyZ-lW-LYc" firstAttribute="leading" secondItem="nUs-aZ-12Y" secondAttribute="leading" constant="20" id="XPQ-xa-IIS"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cf3-vB-V4B" secondAttribute="bottom" id="q3x-cg-GkB"/>
+                                    <constraint firstItem="cyZ-lW-LYc" firstAttribute="top" secondItem="nUs-aZ-12Y" secondAttribute="top" constant="40" id="qtq-P0-vOT"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cf3-vB-V4B" secondAttribute="trailing" id="roa-ML-hdC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hAH-8n-mnI"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="hAH-8n-mnI" firstAttribute="trailing" secondItem="nUs-aZ-12Y" secondAttribute="trailing" constant="24" id="6An-i3-xv8"/>
+                            <constraint firstItem="nUs-aZ-12Y" firstAttribute="centerY" secondItem="EhI-vh-Fhu" secondAttribute="centerY" id="Vec-W5-8CD"/>
+                            <constraint firstItem="nUs-aZ-12Y" firstAttribute="leading" secondItem="hAH-8n-mnI" secondAttribute="leading" constant="24" id="vmz-Qu-SQg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="nUs-aZ-12Y" id="mCk-Da-ydD"/>
+                        <outlet property="descriptionLabel" destination="liJ-ly-cvb" id="irw-Kz-kBp"/>
+                        <outlet property="iconImageView" destination="cyZ-lW-LYc" id="KKn-ZW-bW2"/>
+                        <outlet property="startButton" destination="Cf3-vB-V4B" id="X9u-W6-jMM"/>
+                        <outlet property="titleLabel" destination="Ojy-PO-eeh" id="hhm-SH-FKF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3oj-We-eAM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060.8695652173915" y="115.84821428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gamecontroller" catalog="system" width="128" height="80"/>
+        <image name="moon" catalog="system" width="128" height="121"/>
+        <image name="moon.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
