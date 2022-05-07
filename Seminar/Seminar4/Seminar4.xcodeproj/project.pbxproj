@@ -14,6 +14,10 @@
 		BD895C7B2824F279000AB87A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD895C792824F279000AB87A /* Main.storyboard */; };
 		BD895C7D2824F27A000AB87A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD895C7C2824F27A000AB87A /* Assets.xcassets */; };
 		BD895C802824F27A000AB87A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD895C7E2824F27A000AB87A /* LaunchScreen.storyboard */; };
+		BD895C882825A494000AB87A /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD895C872825A494000AB87A /* APIConstants.swift */; };
+		BD895C8A2825A7EB000AB87A /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD895C892825A7EB000AB87A /* NetworkResult.swift */; };
+		BD895C8C2825B671000AB87A /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD895C8B2825B671000AB87A /* LoginModel.swift */; };
+		BD895C8E2825BC7C000AB87A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD895C8D2825BC7C000AB87A /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		BD895C7C2824F27A000AB87A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD895C7F2824F27A000AB87A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD895C812824F27A000AB87A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD895C872825A494000AB87A /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		BD895C892825A7EB000AB87A /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		BD895C8B2825B671000AB87A /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		BD895C8D2825BC7C000AB87A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		E974C8935CA0780106025F86 /* Pods-Seminar4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seminar4.debug.xcconfig"; path = "Target Support Files/Pods-Seminar4/Pods-Seminar4.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,8 +64,67 @@
 				E974C8935CA0780106025F86 /* Pods-Seminar4.debug.xcconfig */,
 				6BB15202D71D244401400BC2 /* Pods-Seminar4.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BD506E83282629D600AB96ED /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BD895C872825A494000AB87A /* APIConstants.swift */,
+				BD895C892825A7EB000AB87A /* NetworkResult.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		BD506E84282629DD00AB96ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BD895C8B2825B671000AB87A /* LoginModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BD506E85282629E000AB96ED /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				BD895C732824F279000AB87A /* AppDelegate.swift */,
+				BD895C752824F279000AB87A /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		BD506E86282629EE00AB96ED /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BD895C8D2825BC7C000AB87A /* UserService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BD506E87282629FB00AB96ED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BD895C772824F279000AB87A /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BD506E8828262A0B00AB96ED /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				BD895C812824F27A000AB87A /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		BD506E8928262A2700AB96ED /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BD895C7C2824F27A000AB87A /* Assets.xcassets */,
+				BD895C792824F279000AB87A /* Main.storyboard */,
+				BD895C7E2824F27A000AB87A /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		BD895C672824F279000AB87A = {
@@ -81,13 +148,13 @@
 		BD895C722824F279000AB87A /* Seminar4 */ = {
 			isa = PBXGroup;
 			children = (
-				BD895C732824F279000AB87A /* AppDelegate.swift */,
-				BD895C752824F279000AB87A /* SceneDelegate.swift */,
-				BD895C772824F279000AB87A /* ViewController.swift */,
-				BD895C792824F279000AB87A /* Main.storyboard */,
-				BD895C7C2824F27A000AB87A /* Assets.xcassets */,
-				BD895C7E2824F27A000AB87A /* LaunchScreen.storyboard */,
-				BD895C812824F27A000AB87A /* Info.plist */,
+				BD506E85282629E000AB96ED /* Application */,
+				BD506E84282629DD00AB96ED /* Model */,
+				BD506E86282629EE00AB96ED /* Service */,
+				BD506E83282629D600AB96ED /* Network */,
+				BD506E87282629FB00AB96ED /* Controller */,
+				BD506E8928262A2700AB96ED /* Resource */,
+				BD506E8828262A0B00AB96ED /* Support */,
 			);
 			path = Seminar4;
 			sourceTree = "<group>";
@@ -207,6 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD895C8E2825BC7C000AB87A /* UserService.swift in Sources */,
+				BD895C882825A494000AB87A /* APIConstants.swift in Sources */,
+				BD895C8C2825B671000AB87A /* LoginModel.swift in Sources */,
+				BD895C8A2825A7EB000AB87A /* NetworkResult.swift in Sources */,
 				BD895C782824F279000AB87A /* ViewController.swift in Sources */,
 				BD895C742824F279000AB87A /* AppDelegate.swift in Sources */,
 				BD895C762824F279000AB87A /* SceneDelegate.swift in Sources */,
@@ -361,7 +432,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W7P3R7ZL78;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Seminar4/Info.plist;
+				INFOPLIST_FILE = Seminar4/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -390,7 +461,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W7P3R7ZL78;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Seminar4/Info.plist;
+				INFOPLIST_FILE = Seminar4/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
