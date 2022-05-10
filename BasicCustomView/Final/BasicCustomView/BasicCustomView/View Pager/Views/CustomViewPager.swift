@@ -5,6 +5,10 @@
 //  Created by taehy.k on 2022/05/05.
 //
 
+/*
+ Pager는 ContainerView와 PageViewController를 이용해서 구현했습니다.
+ */
+
 import UIKit
 
 class CustomViewPager: UIViewController {
@@ -18,7 +22,7 @@ class CustomViewPager: UIViewController {
     
     // 페이지 뷰 컨트롤러
     private let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
-    // 컨텐츠로 들어갈 뷰 컨트롤러 배열
+    // 컨텐츠로 들어갈 뷰 컨트롤러 배열 -> 여기에 컨텐츠로 들어갈 뷰 컨트롤러를 넣어주면 됩니다.
     private let contents: [UIViewController] = [
         FirstViewController(),
         SecondViewController(),
@@ -43,8 +47,16 @@ class CustomViewPager: UIViewController {
     }
     
     private func setupPageViewController() {
+        
+                
         self.addChild(pageViewController)
-        pageViewController.view.frame = containerView.frame
+                
+        // containerView와 pageViewController의 frame은 다를 수 밖에 없다.
+        // 높이는 당연히 다르고, containerView의 frame은 스토리보드에서 작업한 기기 크기에 따라서 달라진다.
+        print("전", containerView.frame, pageViewController.view.frame)
+        containerView.frame = pageViewController.view.frame
+        print("후", containerView.frame, pageViewController.view.frame)
+        
         self.containerView.addSubview(pageViewController.view)
         pageViewController.didMove(toParent: self)
         

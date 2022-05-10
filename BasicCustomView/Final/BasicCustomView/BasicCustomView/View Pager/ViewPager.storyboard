@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J9E-Oo-ReB">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J9E-Oo-ReB">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3️⃣ 뷰 페이저" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hl7-3e-R9r">
-                                <rect key="frame" x="146.5" y="64" width="121" height="29"/>
+                                <rect key="frame" x="146.66666666666666" y="64" width="120.99999999999997" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -64,10 +63,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="X8G-rD-Atd">
-                                <rect key="frame" x="0.0" y="44" width="414" height="31"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAn-Eq-bqK">
-                                        <rect key="frame" x="0.0" y="0.0" width="138" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="First Tab"/>
                                         <connections>
@@ -75,7 +74,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6S-qe-Ad3">
-                                        <rect key="frame" x="138" y="0.0" width="138" height="31"/>
+                                        <rect key="frame" x="138" y="0.0" width="138" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Second Tab"/>
                                         <connections>
@@ -83,7 +82,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywA-bH-fHY">
-                                        <rect key="frame" x="276" y="0.0" width="138" height="31"/>
+                                        <rect key="frame" x="276" y="0.0" width="138" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Third Tab"/>
                                         <connections>
@@ -91,50 +90,53 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ens-bD-dk8"/>
+                                </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62U-9j-z16">
-                                <rect key="frame" x="0.0" y="75" width="414" height="5"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSf-lG-loG">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="5"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="bbE-FK-omc"/>
+                                            <constraint firstAttribute="width" constant="130" id="AHM-U3-qgU"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
-                                    <constraint firstItem="QSf-lG-loG" firstAttribute="top" secondItem="62U-9j-z16" secondAttribute="top" id="dEA-0d-4ma"/>
-                                    <constraint firstAttribute="height" constant="5" id="fes-Jd-YoN"/>
-                                    <constraint firstItem="QSf-lG-loG" firstAttribute="leading" secondItem="62U-9j-z16" secondAttribute="leading" id="iqj-aM-ph1"/>
-                                    <constraint firstAttribute="bottom" secondItem="QSf-lG-loG" secondAttribute="bottom" id="tBG-IK-Vov"/>
+                                    <constraint firstAttribute="bottom" secondItem="QSf-lG-loG" secondAttribute="bottom" id="5Ej-OS-CCZ"/>
+                                    <constraint firstItem="QSf-lG-loG" firstAttribute="top" secondItem="62U-9j-z16" secondAttribute="top" id="KsY-fO-fzr"/>
+                                    <constraint firstAttribute="height" constant="5" id="pq9-1g-aQv"/>
+                                    <constraint firstItem="QSf-lG-loG" firstAttribute="leading" secondItem="62U-9j-z16" secondAttribute="leading" id="qdA-oO-GQn"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4I-wS-jsR">
-                                <rect key="frame" x="0.0" y="80" width="414" height="816"/>
+                                <rect key="frame" x="0.0" y="99" width="414" height="797"/>
                             </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="u2l-IY-eLO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="u2l-IY-eLO" firstAttribute="trailing" secondItem="X8G-rD-Atd" secondAttribute="trailing" id="0Aq-Wd-atP"/>
-                            <constraint firstItem="X8G-rD-Atd" firstAttribute="leading" secondItem="u2l-IY-eLO" secondAttribute="leading" id="6tT-pl-bOn"/>
-                            <constraint firstAttribute="trailing" secondItem="b4I-wS-jsR" secondAttribute="trailing" id="88D-2z-gol"/>
-                            <constraint firstItem="b4I-wS-jsR" firstAttribute="leading" secondItem="pjS-iF-RJm" secondAttribute="leading" id="9EE-DW-Ykn"/>
-                            <constraint firstItem="X8G-rD-Atd" firstAttribute="top" secondItem="u2l-IY-eLO" secondAttribute="top" id="Exs-oX-N04"/>
-                            <constraint firstItem="b4I-wS-jsR" firstAttribute="top" secondItem="62U-9j-z16" secondAttribute="bottom" id="UrR-Oj-yoK"/>
-                            <constraint firstItem="62U-9j-z16" firstAttribute="top" secondItem="X8G-rD-Atd" secondAttribute="bottom" id="q6n-Ek-nYA"/>
-                            <constraint firstAttribute="bottom" secondItem="b4I-wS-jsR" secondAttribute="bottom" id="sMY-oz-nuW"/>
-                            <constraint firstItem="62U-9j-z16" firstAttribute="leading" secondItem="u2l-IY-eLO" secondAttribute="leading" id="vmb-NZ-6AY"/>
-                            <constraint firstItem="u2l-IY-eLO" firstAttribute="trailing" secondItem="62U-9j-z16" secondAttribute="trailing" id="z8c-Qz-aQh"/>
+                            <constraint firstItem="X8G-rD-Atd" firstAttribute="top" secondItem="u2l-IY-eLO" secondAttribute="top" id="Ci6-qg-2qp"/>
+                            <constraint firstItem="b4I-wS-jsR" firstAttribute="top" secondItem="62U-9j-z16" secondAttribute="bottom" id="EbU-vO-Z9c"/>
+                            <constraint firstItem="62U-9j-z16" firstAttribute="leading" secondItem="u2l-IY-eLO" secondAttribute="leading" id="FjE-Qt-rS8"/>
+                            <constraint firstAttribute="bottom" secondItem="b4I-wS-jsR" secondAttribute="bottom" id="XAg-gQ-9Bh"/>
+                            <constraint firstItem="b4I-wS-jsR" firstAttribute="leading" secondItem="u2l-IY-eLO" secondAttribute="leading" id="aUV-z0-QWj"/>
+                            <constraint firstItem="b4I-wS-jsR" firstAttribute="trailing" secondItem="u2l-IY-eLO" secondAttribute="trailing" id="ase-k7-d59"/>
+                            <constraint firstItem="62U-9j-z16" firstAttribute="top" secondItem="X8G-rD-Atd" secondAttribute="bottom" id="cPU-Fx-oje"/>
+                            <constraint firstItem="X8G-rD-Atd" firstAttribute="leading" secondItem="u2l-IY-eLO" secondAttribute="leading" id="cpV-gm-qIT"/>
+                            <constraint firstItem="62U-9j-z16" firstAttribute="trailing" secondItem="u2l-IY-eLO" secondAttribute="trailing" id="jQf-db-hz5"/>
+                            <constraint firstItem="u2l-IY-eLO" firstAttribute="trailing" secondItem="X8G-rD-Atd" secondAttribute="trailing" id="n2c-a4-cxv"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="barBackgroundView" destination="62U-9j-z16" id="tVw-kT-ZhN"/>
-                        <outlet property="barLeading" destination="iqj-aM-ph1" id="9QS-ZK-XUB"/>
+                        <outlet property="barLeading" destination="qdA-oO-GQn" id="aJx-HP-it0"/>
                         <outlet property="barView" destination="QSf-lG-loG" id="lZq-q8-zjm"/>
-                        <outlet property="barWidth" destination="bbE-FK-omc" id="s8t-Qt-L7N"/>
+                        <outlet property="barWidth" destination="AHM-U3-qgU" id="NYl-0Q-JEc"/>
                         <outlet property="buttonStackView" destination="X8G-rD-Atd" id="tNm-UP-f8Z"/>
                         <outlet property="containerView" destination="b4I-wS-jsR" id="JeF-rr-y15"/>
                     </connections>
