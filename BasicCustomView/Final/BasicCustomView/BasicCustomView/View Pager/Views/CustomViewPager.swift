@@ -34,7 +34,6 @@ class CustomViewPager: UIViewController {
     // 탭이 클릭된 건지 판단하기 위한 변수(스와이프랑 구분하기 위함)
     private var tappedButton: Bool = false
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -42,24 +41,18 @@ class CustomViewPager: UIViewController {
     }
     
     private func setupUI() {
-        barWidth.constant = view.bounds.width / CGFloat(buttonStackView.arrangedSubviews.count)
+        guard let button = buttonStackView.arrangedSubviews.first as? UIButton else { return }
+        barWidth.constant = button.contentSize
+        barLeading.constant = button.margin
         pageViewController.view.backgroundColor = .black
     }
     
     private func setupPageViewController() {
-        
-                
         self.addChild(pageViewController)
-                
-        // containerView와 pageViewController의 frame은 다를 수 밖에 없다.
-        // 높이는 당연히 다르고, containerView의 frame은 스토리보드에서 작업한 기기 크기에 따라서 달라진다.
-        print("전", containerView.frame, pageViewController.view.frame)
         containerView.frame = pageViewController.view.frame
-        print("후", containerView.frame, pageViewController.view.frame)
-        
         self.containerView.addSubview(pageViewController.view)
-        pageViewController.didMove(toParent: self)
         
+        pageViewController.didMove(toParent: self)
         pageViewController.delegate = self
         pageViewController.dataSource = self
         
@@ -77,7 +70,8 @@ class CustomViewPager: UIViewController {
     @IBAction func tabButtonTapped(_ sender: UIButton) {
         
         guard let index = buttonStackView.arrangedSubviews.firstIndex(where: { $0 == sender }),
-              index != currentIndex else {
+              index != currentIndex,
+              let button = buttonStackView.arrangedSubviews[index] as? UIButton else {
                   // index를 정확히 가져오지 못하거나
                   // 현재 선택되어 있는 페이지의 탭과 같다면(이동할 필요가 없음)
                   return
@@ -86,22 +80,30 @@ class CustomViewPager: UIViewController {
         // 버튼이 선택되었다는 것을 나타냄(true)
         tappedButton = true
         
+        var leadingConstant: CGFloat = 0
+        for i in 0..<index {
+            leadingConstant += self.buttonStackView.arrangedSubviews[i].frame.width
+        }
+        leadingConstant += button.margin
+        
         UIView.animate(withDuration: 0.3) {
+            self.barWidth.constant = button.contentSize
             // 인디케이터(바)를 좌우로 이동시키기 위해 constraint 값 조정
-            self.barLeading.constant = CGFloat(index) * self.barView.frame.width
+            self.barLeading.constant = leadingConstant
             self.barBackgroundView.layoutIfNeeded()
         }
-        
+                
         // 현재 인덱스에 맞는 뷰 컨트롤러
         let content = contents[index]
         
         pageViewController.setViewControllers(
             [content],
             direction: currentIndex < index ? .forward : .reverse, // 현재 보고 있는 페이지가 인덱스(선택한 탭)보다 작아? 그럼 다음 페이지로 가, 아니면 이전 페이지로 가!
-            animated: true) { _ in
+            animated: true
+        ) { _ in
                 self.currentIndex = index
                 self.tappedButton = false
-            }
+        }
     }
 }
 
@@ -136,17 +138,54 @@ extension CustomViewPager: UIPageViewControllerDelegate, UIPageViewControllerDat
 }
 
 extension CustomViewPager: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        // 스와이프랑 탭 클릭이랑 구분하기 위한 코드
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard !tappedButton else { return }
         
-        let offsetX = scrollView.contentOffset.x
-        let contentWidth = pageViewController.view.frame.width
+        let scrollOffsetX = scrollView.contentOffset.x
+        let contentSizeWidth = view.frame.size.width
         
-        // 0 ~ 1 (좌우로 얼마나 움직였는지 체크하기 위한 퍼센티지)
-        let percent = (offsetX - contentWidth) / contentWidth
+        // -1.0 ~ 1.0 (좌우 이동)
+        let movement = (scrollOffsetX - contentSizeWidth) / contentSizeWidth
+
+        // 0.0 ~ 2.0
+        let currentIdx: CGFloat = movement + CGFloat(currentIndex)
+        print(currentIdx)
+        let percent: CGFloat = currentIdx - CGFloat(Int(currentIdx))
         
-        let constant = (CGFloat(currentIndex) + percent) * barView.frame.width
-        barView.frame.origin.x = constant
+        var leftWidth: CGFloat = 0, rightWidth: CGFloat = 0
+        var leftX: CGFloat = 0, rightX: CGFloat = 0
+        var leftMargin: CGFloat = 0, rightMargin: CGFloat = 0
+
+        if let leftButton = buttonStackView.arrangedSubviews[Int(currentIdx)] as? UIButton {
+            leftWidth = leftButton.contentSize
+            leftX = leftButton.frame.origin.x
+            leftMargin = leftButton.margin
+        }
+        
+        if Int(currentIdx) + 1 < contents.count,
+           let rightButton = buttonStackView.arrangedSubviews[Int(currentIdx) + 1] as? UIButton {
+            rightWidth = rightButton.contentSize
+            rightX = rightButton.frame.origin.x
+            rightMargin = rightButton.margin
+        }
+        
+        let indicatorX = (rightX - leftX) * percent + leftX
+        let indicatorWidth = (rightWidth - leftWidth) * percent + leftWidth
+        let buttonMargin = (rightMargin - leftMargin) * percent + leftMargin
+        
+        // Constraints update
+        barLeading.constant = indicatorX + buttonMargin
+        barWidth.constant = indicatorWidth
+    }
+}
+
+extension UIButton {
+    
+    var contentSize: CGFloat {
+        return intrinsicContentSize.width
+    }
+    
+    var margin: CGFloat {
+        return (frame.width - contentSize) / 2
     }
 }
