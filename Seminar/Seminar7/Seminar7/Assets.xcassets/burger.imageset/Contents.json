@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "pexels-chevanon-photography-1108117.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "pexels-chevanon-photography-1108118.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "pexels-chevanon-photography-1108119.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

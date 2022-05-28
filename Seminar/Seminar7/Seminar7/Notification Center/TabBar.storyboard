@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lNk-lc-QmX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="2Nz-5r-g3b">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="lNk-lc-QmX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fFj-xF-6Sg">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="viewControllers" id="uXn-w3-Kfn"/>
+                        <segue destination="S1W-W8-EoM" kind="relationship" relationship="viewControllers" id="W82-eA-Fad"/>
+                        <segue destination="XN0-io-o0n" kind="relationship" relationship="viewControllers" id="Hk9-iB-wHY"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wsw-pJ-Sv3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124.6376811594203" y="83.705357142857139"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="FirstViewController" customModule="Seminar7" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Xpn-X7-3tw">
+                                <rect key="frame" x="20" y="348" width="374" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnM-Pb-kWn">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="90"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="불 지르기">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="fireOnTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JM8-dL-1oh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUJ-gE-VCo">
+                                        <rect key="frame" x="0.0" y="110" width="374" height="90"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="소방관 호출">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="fireOffTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dL5-Ma-sTk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="1UT-j9-HWw"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Xpn-X7-3tw" secondAttribute="trailing" constant="20" id="941-gS-jaG"/>
+                            <constraint firstItem="Xpn-X7-3tw" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Eal-0l-P9D"/>
+                            <constraint firstItem="Xpn-X7-3tw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="eeP-ZL-tHq"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="wrench" catalog="system" id="Rki-qk-gK0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1217.3913043478262" y="973.66071428571422"/>
+        </scene>
+        <!--태현집-->
+        <scene sceneID="2Sc-ah-84m">
+            <objects>
+                <viewController id="S1W-W8-EoM" customClass="SecondViewController" customModule="Seminar7" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lnm-tB-d28">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_fire" translatesAutoresizingMaskIntoConstraints="NO" id="Cvr-Pm-iE6">
+                                <rect key="frame" x="40" y="144" width="105" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="105" id="aFf-yD-eZr"/>
+                                    <constraint firstAttribute="width" constant="105" id="caj-9w-il4"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_fire" translatesAutoresizingMaskIntoConstraints="NO" id="yUk-EJ-4bE">
+                                <rect key="frame" x="254" y="384" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="3Dr-3V-gpJ"/>
+                                    <constraint firstAttribute="height" constant="120" id="BJO-JH-G3s"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_fire" translatesAutoresizingMaskIntoConstraints="NO" id="V9L-TX-N7X">
+                                <rect key="frame" x="40" y="622" width="85" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="WLW-Da-cJi"/>
+                                    <constraint firstAttribute="height" constant="85" id="g1f-PU-w1X"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vjm-Xr-tX3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Cvr-Pm-iE6" firstAttribute="leading" secondItem="Vjm-Xr-tX3" secondAttribute="leading" constant="40" id="IdO-Gy-sof"/>
+                            <constraint firstItem="yUk-EJ-4bE" firstAttribute="top" secondItem="Cvr-Pm-iE6" secondAttribute="bottom" constant="135" id="Mtt-Hz-s2b"/>
+                            <constraint firstItem="Vjm-Xr-tX3" firstAttribute="bottom" secondItem="V9L-TX-N7X" secondAttribute="bottom" constant="106" id="Nqk-XL-Pxs"/>
+                            <constraint firstItem="Cvr-Pm-iE6" firstAttribute="top" secondItem="Vjm-Xr-tX3" secondAttribute="top" constant="100" id="P3k-CS-WzL"/>
+                            <constraint firstItem="V9L-TX-N7X" firstAttribute="leading" secondItem="Vjm-Xr-tX3" secondAttribute="leading" constant="40" id="P63-F0-dyX"/>
+                            <constraint firstItem="Vjm-Xr-tX3" firstAttribute="trailing" secondItem="yUk-EJ-4bE" secondAttribute="trailing" constant="40" id="VRb-BP-4dC"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="태현집" image="music.note.house" catalog="system" id="KsF-cM-kII"/>
+                    <connections>
+                        <outletCollection property="fires" destination="Cvr-Pm-iE6" collectionClass="NSMutableArray" id="ass-4U-hc9"/>
+                        <outletCollection property="fires" destination="yUk-EJ-4bE" collectionClass="NSMutableArray" id="Dup-hX-B8O"/>
+                        <outletCollection property="fires" destination="V9L-TX-N7X" collectionClass="NSMutableArray" id="gte-k1-pdc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x40-nl-L4V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13.043478260869566" y="973.66071428571422"/>
+        </scene>
+        <!--태끼집-->
+        <scene sceneID="f6b-d5-KJo">
+            <objects>
+                <viewController id="XN0-io-o0n" customClass="ThirdViewController" customModule="Seminar7" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="evH-zM-neS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_fire" translatesAutoresizingMaskIntoConstraints="NO" id="eTS-zP-VWJ">
+                                <rect key="frame" x="40" y="150" width="105" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="D49-gk-LVS"/>
+                                    <constraint firstAttribute="height" constant="105" id="dO4-De-XWK"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_fire" translatesAutoresizingMaskIntoConstraints="NO" id="3AN-R2-fyT">
+                                <rect key="frame" x="125" y="357" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="OUi-jF-tD0"/>
+                                    <constraint firstAttribute="width" constant="120" id="QVf-tU-pfd"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_fire" translatesAutoresizingMaskIntoConstraints="NO" id="Met-6V-4wH">
+                                <rect key="frame" x="254" y="629" width="85" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="N6i-Rh-7ZA"/>
+                                    <constraint firstAttribute="width" constant="85" id="vCu-I3-BI1"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="csD-y6-IwZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eTS-zP-VWJ" firstAttribute="leading" secondItem="csD-y6-IwZ" secondAttribute="leading" constant="40" id="3zA-Jm-eeE"/>
+                            <constraint firstItem="3AN-R2-fyT" firstAttribute="leading" secondItem="eTS-zP-VWJ" secondAttribute="trailing" constant="-20" id="4hX-WY-dFz"/>
+                            <constraint firstItem="eTS-zP-VWJ" firstAttribute="top" secondItem="csD-y6-IwZ" secondAttribute="top" constant="106" id="6Ik-LV-jde"/>
+                            <constraint firstItem="3AN-R2-fyT" firstAttribute="top" secondItem="eTS-zP-VWJ" secondAttribute="bottom" constant="102" id="Nmi-XS-kS4"/>
+                            <constraint firstItem="Met-6V-4wH" firstAttribute="leading" secondItem="3AN-R2-fyT" secondAttribute="trailing" constant="9" id="QlF-hp-mkh"/>
+                            <constraint firstItem="Met-6V-4wH" firstAttribute="top" secondItem="3AN-R2-fyT" secondAttribute="bottom" constant="152" id="a04-Sa-TWm"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="태끼집" image="house" catalog="system" id="YzX-24-Ft8"/>
+                    <connections>
+                        <outletCollection property="fires" destination="eTS-zP-VWJ" collectionClass="NSMutableArray" id="bu4-3L-rI8"/>
+                        <outletCollection property="fires" destination="3AN-R2-fyT" collectionClass="NSMutableArray" id="1qw-6Q-pyN"/>
+                        <outletCollection property="fires" destination="Met-6V-4wH" collectionClass="NSMutableArray" id="PYR-Ki-B5k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SY5-HV-gTm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1300" y="974"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="icn_fire" width="603" height="603"/>
+        <image name="music.note.house" catalog="system" width="128" height="106"/>
+        <image name="wrench" catalog="system" width="128" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
